@@ -40,9 +40,12 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(kopyalama){
+  let tatlar=[...kopyalama];
+  return tatlar
 }
+console.log(kopyala(orijinalTatlar));
+
 
 
 /* Görev 2:
@@ -56,10 +59,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(gelenVeri){
+if (gelenVeri.length==25) {
+  return true
+} else {
+  return false
 }
-
+}
+console.log(dizi25Cesitmi(orijinalTatlar))
 
 /* Görev 3:
 Pastane sahibi size yeni bir lezzet fikriyle geldi: Kakule! Bunun da çok tutacağından çok emin. Bu lezzeti eklemek için diziyi değiştirmeniz gerekir.
@@ -74,12 +81,13 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi,yenitat){
+  return(dizi.unshift(yenitat))
 }
+console.log(cesitEkle(orijinalTatlar, "Kakule"))
+console.log(orijinalTatlar);
 
-
-/* Cörev 4:
+/* Görev 4:
 
 Hoooppppalaa! orijinalTatlar dizisinde artık 26 aroma var! Göreviniz, dizinin sonundan bir öğeyi kaldırmaktır.
 
@@ -92,10 +100,11 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi){
+ return dizi.pop();
 }
-
+console.clear();
+console.log(sonCesitKaldir(orijinalTatlar));
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -128,8 +137,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(dizi,lezzet){
+let index=dizi.indexOf(lezzet);
+dizi.splice(index,1);
+return dizi;
 }
 
 
@@ -154,8 +165,14 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(dizi_7,filt_7){
+  let n_dizi = [];
+  for (let index=0; index<dizi_7.length; index++){
+    if (dizi_7[index].includes(filt_7)) {
+      n_dizi.push(dizi_7[index]);
+    }
+  }
+  return n_dizi;
 }
 
 
